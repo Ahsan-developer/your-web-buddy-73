@@ -1,71 +1,79 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { CheckCircle, Play } from "lucide-react";
 
 const CTA = () => {
   return (
     <>
-      {/* First CTA - Purple with Circle */}
+      {/* First CTA - Purple Background */}
       <section className="py-20 bg-primary relative overflow-hidden">
         {/* Large decorative circle */}
-        <div className="absolute left-20 top-1/2 -translate-y-1/2 w-64 h-64 bg-white/10 rounded-full blur-2xl" />
-        <div className="absolute left-32 top-1/2 -translate-y-1/2 w-48 h-48 border-4 border-white/20 rounded-full" />
+        <div className="absolute left-32 top-1/2 -translate-y-1/2 w-64 h-64 bg-secondary rounded-full" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                We Are Ready Develop Your Site!
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                We're Ready Develop Your Site!
               </h2>
-              <ul className="space-y-3 text-white/90">
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  <span>There are many variations of passages of Lorem Ipsum available.</span>
+              <ul className="space-y-4 text-white">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                  <span>Exploring version oflorem veritatis proin</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  <span>Contrary to popular belief, Lorem Ipsum is not simply random text.</span>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                  <span>Auctor aliquet aenean simply free text veritatis quis</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-white rounded-full" />
-                  <span>It has roots in a piece of classical Latin literature from 45 BC.</span>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                  <span>Consequat ipsum nec lorem sagittis sem nibh.</span>
                 </li>
               </ul>
             </div>
             
             <div className="flex justify-end">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 rounded-md">
-                Get In Touch
+              <Button size="lg" className="bg-white text-dark-navy hover:bg-white/90 px-10 py-6 rounded uppercase tracking-wide font-semibold">
+                Learn More
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Second CTA - Dark with Pricing Cards */}
-      <section className="py-20 bg-dark-navy relative overflow-hidden">
+      {/* Second CTA - Dark with Stats */}
+      <section className="py-20 bg-secondary relative overflow-hidden">
         {/* Diagonal purple shape */}
-        <div className="absolute -left-20 top-0 bottom-0 w-[800px]">
-          <div className="absolute inset-0 bg-primary/20 transform -skew-x-12" />
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/30 rounded-full blur-xl" />
+        <div className="absolute -left-20 top-0 bottom-0 w-[600px]">
+          <div className="absolute inset-0 bg-primary/30 transform -skew-x-12" />
+        </div>
+        
+        {/* Decorative circle with play button */}
+        <div className="absolute left-40 top-1/2 -translate-y-1/2 w-24 h-24 bg-primary rounded-full flex items-center justify-center">
+          <Play className="w-8 h-8 text-white fill-white ml-1" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="mb-4">
+                <span className="text-white/70 font-medium text-sm uppercase tracking-wider">
+                  Do You Need a Meeting?
+                </span>
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
                 Save Time and Money with a Top IT Solution Agency
               </h2>
             </div>
             
             <div className="flex gap-6 justify-end">
-              {/* Pricing Cards */}
-              <div className="bg-primary rounded-xl p-6 w-40 text-center">
-                <div className="text-5xl font-bold text-white mb-2">$980</div>
-                <div className="text-white/80 text-sm">Starting from</div>
+              {/* Stats Cards */}
+              <div className="bg-primary/90 rounded-lg p-8 w-44 text-center">
+                <div className="text-5xl font-bold text-white mb-2">9280</div>
+                <div className="text-white/90 text-sm leading-tight">We have satisfied customers</div>
               </div>
-              <div className="bg-primary rounded-xl p-6 w-40 text-center">
-                <div className="text-5xl font-bold text-white mb-2">$450</div>
-                <div className="text-white/80 text-sm">Starting from</div>
+              <div className="bg-primary rounded-lg p-8 w-44 text-center">
+                <div className="text-5xl font-bold text-white mb-2">6420</div>
+                <div className="text-white/90 text-sm leading-tight">Projects has been completed</div>
               </div>
             </div>
           </div>
@@ -73,24 +81,23 @@ const CTA = () => {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 bg-primary">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-r from-primary via-primary to-primary/90 relative overflow-hidden">
+        {/* Diagonal shapes */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-0 w-96 h-full bg-white/10 transform skew-x-12 translate-x-32" />
+          <div className="absolute top-0 left-0 w-96 h-full bg-white/10 transform -skew-x-12 -translate-x-32" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-white/90 mb-3">Subscribe Our Newsletter</p>
+            <p className="text-white/90 mb-3 text-sm">We're here to help to grow your business.</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Looking for the Best IT Business Solutions?
             </h2>
             
-            <div className="flex gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="flex-1 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <Button className="bg-white text-primary hover:bg-white/90 px-8 rounded-md">
-                Subscribe
-              </Button>
-            </div>
+            <Button size="lg" className="bg-white text-dark-navy hover:bg-white/90 px-10 py-6 rounded uppercase tracking-wide font-semibold">
+              Learn More
+            </Button>
           </div>
         </div>
       </section>

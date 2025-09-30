@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, Search, ShoppingCart, Twitter, Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -8,46 +8,66 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-secondary text-white py-3 px-4">
-        <div className="container mx-auto flex flex-wrap justify-between items-center text-sm">
+      <div className="bg-white border-b py-2 px-4">
+        <div className="container mx-auto flex flex-wrap justify-between items-center text-xs">
           <div className="flex items-center gap-6">
-            <a href="mailto:needhelp@infetech.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Mail className="w-4 h-4" />
-              <span className="hidden sm:inline">needhelp@infetech.com</span>
-            </a>
-            <span className="hidden md:inline text-white/70">Mon - Sat: 8.00 am - 7.00 pm</span>
+            <span className="text-muted-foreground hidden lg:inline">Welcome to IT Solutions & Services WordPress Theme</span>
           </div>
-          <a href="tel:+8898006802" className="flex items-center gap-2 font-semibold hover:text-primary transition-colors">
-            <Phone className="w-4 h-4" />
-            <span>Call Anytime +88 (9800) 6802</span>
-          </a>
+          <div className="flex items-center gap-6">
+            <a href="mailto:needhelp@company.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <Mail className="w-3 h-3" />
+              <span className="hidden sm:inline">needhelp@company.com</span>
+            </a>
+            <span className="text-muted-foreground hidden md:inline">Mon - Sat: 8.00 am - 1.00 pm</span>
+            <div className="flex items-center gap-2">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Twitter className="w-3 h-3" /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="w-3 h-3" /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="w-3 h-3" /></a>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <header className="bg-white border-b sticky top-0 z-50 shadow-sm">
+      <header className="bg-white sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="/" className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-              INFETECH
+            <a href="/" className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
+                <div className="w-6 h-6 border-2 border-white rounded" />
+              </div>
+              <span className="text-xl font-bold text-dark-navy">infetech</span>
             </a>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               <a href="#home" className="font-medium text-dark-navy hover:text-primary transition-colors">Home</a>
               <a href="#about" className="font-medium text-dark-navy hover:text-primary transition-colors">About</a>
+              <a href="#" className="font-medium text-dark-navy hover:text-primary transition-colors">Pages</a>
               <a href="#services" className="font-medium text-dark-navy hover:text-primary transition-colors">Services</a>
               <a href="#projects" className="font-medium text-dark-navy hover:text-primary transition-colors">Projects</a>
-              <a href="#team" className="font-medium text-dark-navy hover:text-primary transition-colors">Team</a>
+              <a href="#" className="font-medium text-dark-navy hover:text-primary transition-colors">Blog</a>
               <a href="#contact" className="font-medium text-dark-navy hover:text-primary transition-colors">Contact</a>
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-              <Button className="bg-primary hover:bg-primary/90 text-white px-6 rounded-md">
-                Get Started
-              </Button>
+            {/* Right Actions */}
+            <div className="hidden lg:flex items-center gap-4">
+              <button className="p-2 hover:text-primary transition-colors">
+                <Search className="w-5 h-5" />
+              </button>
+              <button className="p-2 hover:text-primary transition-colors">
+                <ShoppingCart className="w-5 h-5" />
+              </button>
+              <div className="flex items-center gap-3 ml-4">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-white" />
+                </div>
+                <div className="text-sm">
+                  <div className="text-muted-foreground text-xs">Call Anytime</div>
+                  <div className="font-bold text-dark-navy">+ 88 ( 9800 ) 6802</div>
+                </div>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -69,9 +89,6 @@ const Header = () => {
               <a href="#projects" className="font-medium hover:text-primary transition-colors py-2">Projects</a>
               <a href="#team" className="font-medium hover:text-primary transition-colors py-2">Team</a>
               <a href="#contact" className="font-medium hover:text-primary transition-colors py-2">Contact</a>
-              <Button className="bg-primary hover:bg-primary/90 text-white w-full rounded-md">
-                Get Started
-              </Button>
             </nav>
           )}
         </div>
