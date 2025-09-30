@@ -1,22 +1,17 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
 
 const teamMembers = [
   {
     name: "Rosalina D. William",
     role: "Founder",
-    image: null,
   },
   {
     name: "Kelian Anderson",
     role: "Digital Marketer",
-    image: null,
   },
   {
     name: "Silviia Garden",
     role: "Developer",
-    image: null,
   },
 ];
 
@@ -24,51 +19,49 @@ const Team = () => {
   return (
     <section id="team" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block mb-4">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Team Members
-            </span>
+        <div className="flex justify-between items-start mb-16">
+          <div>
+            <div className="mb-4">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Team Members
+              </span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold text-dark-navy leading-tight max-w-md">
+              Meet Our Professional Team Members
+            </h2>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Meet Our Professional Team Members
-          </h2>
-          
-          <p className="text-lg text-muted-foreground">
+          <p className="text-muted-foreground max-w-md hidden lg:block">
             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <Card 
+            <div 
               key={index}
-              className="group hover:shadow-glow transition-all duration-300 border-2 hover:border-primary/50 overflow-hidden"
+              className="group"
             >
-              <CardContent className="p-0">
-                <div className="relative h-80 bg-secondary">
-                  <div className="absolute inset-0 flex items-center justify-center text-background/20 text-6xl font-bold">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
+              <div className="bg-secondary h-96 rounded-xl mb-6 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center text-white/10 text-6xl font-bold">
+                  {member.name.split(' ').map(n => n[0]).join('')}
                 </div>
-                
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-1 text-foreground">
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-dark-navy mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-muted-foreground mb-4">{member.role}</p>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="icon"
-                    className="rounded-full border-primary/20 hover:bg-primary hover:text-primary-foreground"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </Button>
+                  <p className="text-muted-foreground">{member.role}</p>
                 </div>
-              </CardContent>
-            </Card>
+                
+                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                  <Linkedin className="w-5 h-5 text-white" />
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

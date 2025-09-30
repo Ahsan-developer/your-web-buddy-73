@@ -1,81 +1,41 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroBg} 
-          alt="Technology Background" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-foreground/80" />
-        <div className="absolute inset-0 gradient-hero" />
+    <section id="home" className="relative min-h-[600px] flex items-center overflow-hidden gradient-hero">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-20 w-32 h-32 border-4 border-white/10 rounded-full" />
+      <div className="absolute bottom-20 right-40 w-16 h-16 border-2 border-white/20 rounded-full" />
+      <div className="absolute top-1/2 right-60 w-2 h-20 bg-white/10 transform -rotate-45" />
+      
+      {/* Diagonal Purple Shape - Top Left */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/30 transform rotate-45 blur-sm" />
+      
+      {/* Diagonal Purple Shape - Top Right */}
+      <div className="absolute -top-32 right-0 w-[600px] h-[600px] overflow-hidden">
+        <div className="absolute -top-20 -right-20 w-full h-full bg-primary/20 transform rotate-45" />
+        <div className="absolute top-0 right-0 w-3/4 h-3/4 border-r-4 border-b-4 border-white/5 transform rotate-45" />
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl">
-          <div className="inline-block mb-6">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
+      <div className="container mx-auto px-4 relative z-10 py-20">
+        <div className="max-w-2xl">
+          <div className="mb-6">
+            <span className="text-white/90 text-sm uppercase tracking-widest">
               Experience the Best IT Solutions
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-background mb-6 leading-tight">
-            IT Solutions & Services
+          <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
+            IT SOLUTIONS &<br />SERVICES
           </h1>
           
-          <p className="text-xl md:text-2xl text-background/90 mb-8 leading-relaxed">
-            We're Partner of Your Innovations
-          </p>
-          
-          <p className="text-lg text-background/80 mb-10 max-w-2xl">
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even.
-          </p>
-          
-          <div className="flex flex-wrap gap-4">
-            <Button variant="hero" size="lg" className="text-lg px-8 h-14">
-              Learn More
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-lg px-8 h-14 border-background/20 text-background hover:bg-background/10 hover:text-background backdrop-blur-sm"
-            >
-              <Play className="w-5 h-5" />
-              Watch Video
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-4xl font-bold text-accent mb-2">6800+</div>
-              <div className="text-background/80">Satisfied Clients</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-accent mb-2">850+</div>
-              <div className="text-background/80">Projects Done</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-accent mb-2">25+</div>
-              <div className="text-background/80">Expert Team</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-accent mb-2">15+</div>
-              <div className="text-background/80">Years Experience</div>
-            </div>
-          </div>
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base rounded-md">
+            Learn More
+          </Button>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 };
